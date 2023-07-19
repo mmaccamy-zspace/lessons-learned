@@ -79,18 +79,19 @@ of portability.
 
 English/Chinese localization was stressed at the offset of the project, but it appears that operators 
 could have been trained on a purely english system. This was my first program that had some degree of 
-localization built in so it was a good learning experience nonetheless but it's still to be seen how 
-much this feature will be used in practice. Due to supporting both English/Chinese, input to STS was 
-also limited to keystrokes common between all keyboard mappings and character sets. Simple, but 
-limiting.
+localization built-in so it was a good learning experience but it's still to be seen how much this 
+feature will be used in practice. Due to supporting both English/Chinese, input to STS was also limited 
+to keystrokes common between all keyboard mappings and character sets. Simple, but limiting.
 
 A far more robust option would have been to ditch the idea of creating a console applicaton and use a 
 GUI framework that natively supports localization and multi-threading. The action of pressing a rendered 
 button is much more easily translateable to any language. Trying to find a font that both supports 
-English and Chinese characters and looks okay is much easier said than done. Although antiquated by 
-today's standards, a simple C# Windows Form Application would have probably provided a much better user 
-experience. Having to basically design all of the localization, multi-threading, and window drawing 
-operations were in hindsight an unnecessary effort when an off the shelf framework could have been used.
+English and Chinese characters and looks okay is much easier said than done. 
+
+Although antiquated by today's standards, a simple C# Windows Form Application would have probably 
+provided a much better user experience. Having to basically design all of the localization, multi-threading, 
+and window drawing operations were in hindsight an unnecessary effort when an off the shelf framework 
+could have been used.
 
 ### Report Visualization Post-Processing Script Development
 The post-processing script developed to create graphs of test report data exported from sts.exe works 
@@ -107,7 +108,8 @@ all architecture and engineering design decisions. This desire was mainly fueled
 left behind from the previous Classic test application development. 
 
 The main difficulty with documentation is that it's boring. Pair that with the clear limited lifespan of 
-Shadow type styluses and associated test software, it's hard to stay motivated when it comes to documentation.
+Shadow type styluses and limited audience for STS to begin with, and it becomes incredibliy hard to stay 
+motivated to review/edit documents; even if some of the information may be out of date.
 
 ### Miscellaneous
 For all deliverables, more robust startup/continuous built-in tests (SBIT/CBIT) could be implemented to 
