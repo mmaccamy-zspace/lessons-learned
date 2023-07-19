@@ -1,5 +1,5 @@
 # lessons-learned
-Collection of summaries and lessons learned for various development tasks\projects.
+Collection of retrospectives and lessons learned for various development tasks\projects.
 
 ## Shadow Test Development (01/2023 - 07/2023)
 
@@ -31,7 +31,7 @@ covered ALL developmental tasks (hardware/software/manufacturing). This method o
 if the long term intent is to track progress using some issue tracking system, then some amount of 
 additional management to both establish accountability and to help prioritize tasks.
 
-### Test Fixture Firmware/Hardware Development
+### Test Fixture Firmware Development
 Test fixture firmware/hardware development was a smooth process. Getting the initial test 
 fixture firmware up and running was straightforward due to the decision to use the same 
 microcontroller as a Shadow type stylus (RP2040). Developing libraries to interface with the 
@@ -60,7 +60,7 @@ opinion, took much longer than it should have for a relatively simple design tha
 Not having someone whose primary task was to complete the test fixture mechanical design early on resulted 
 in the test fixture being the major blocker for hardware/software integration.
 
-### Software Test Suite (STS) Development
+### Software Test Suite (sts.exe) Development
 The initial design goals were:
 - Minimize training by making new test application as similar to the Classic test application as possible.
 - Simple user interface.
@@ -91,6 +91,23 @@ English and Chinese characters and looks okay is much easier said than done. Alt
 today's standards, a simple C# Windows Form Application would have probably provided a much better user 
 experience. Having to basically design all of the localization, multi-threading, and window drawing 
 operations were in hindsight an unnecessary effort when an off the shelf framework could have been used.
+
+### Report Visualization Post-Processing Script Development
+The post-processing script developed to create graphs of test report data exported from sts.exe works 
+but it is slow to process large amount of reports. Ideally, these figures and graphs should be generated 
+at the end of each test by sts.exe using some plotting library like [plotutils](https://www.gnu.org/software/plotutils/) 
+instead of using a Python and Matplotlib to post-process report data. It works for what it is, but all 
+of this functionality should be wrapped into a single applicaton instead of scattered across different 
+executables and scripts.
+
+### Various Shared Document Development
+It's hard to find motivation to develop and maintain documents when there isn't a clear audience. At the 
+beginning of this project development cycle, the goal was to produce accurate documentation explaining 
+all architecture and engineering design decisions. This desire was mainly fueled by the lack of documentation 
+left behind from the previous Classic test application development. 
+
+The main difficulty with documentation is that it's boring. Pair that with the clear limited lifespan of 
+Shadow type styluses and associated test software, it's hard to stay motivated when it comes to documentation.
 
 ### Miscellaneous
 For all deliverables, more robust startup/continuous built-in tests (SBIT/CBIT) could be implemented to 
