@@ -1,7 +1,25 @@
 # lessons-learned
 Collection of retrospectives and lessons learned for various development tasks\projects.
 
-## Shadow Test Development (01/2023 - 07/2023)
+## Overall Testing Philosophies
+
+- Keep an overall record of test data/results. Individual test reports are nice for finer detailed analysis,
+but overall trends can only be measured when lumped together into a larger set.
+- Package test data in a format that is easily filterable and visualized for easy consumption. Implementing a database
+backend to store and organize your data is usually worth the extra effort.
+- All datetime records must be converted to the same time reference. Doing so make it easier tokeeping track of UTC time, sensor time,
+time since boot, etc..
+- "YYYY-MM-DD HH:MM:SS"
+- Time vs. Frequecy domain analysis. Useful characteristics can be learned from a frequency response analysis.
+- Law of Large Numbers is your friend. A larger sample set makes it easier to detect/filter anomalies. Remember, 
+increasing sample size increases test time proportionally; the tradeoff must be considered.
+- Always retry at least once before declaring a failure.
+- Provide a mechanism to report information/warnings/errors of varying severity.
+- GUI. Keyboard layouts change making console applications annoying. Mouse + button clicks are universal. Most people
+understand how to navigate a windowed GUI.
+- Keep It Simple Stupid!
+
+## Shadow Test Development (01/2023 - 08/2023)
 
 ### Overview
 
@@ -125,7 +143,7 @@ were never observed during development; specifically the 'device cannot start' i
 only ever observed on a far less capable Mako laptop. 
 
 The final STS application is more robust due to integration testing on a Mako laptop, but it's hard not to 
-think that there was major time wasted chasing bugs specific to a platform that we now not going to use for 
+think that there was major time wasted chasing bugs specific to a platform that no longer is going to be used for 
 testing. Ultimately, the cost of procurring an Inspire laptop specific for factory testing is far less than 
 the engineering cost it took chasing bugs that only ever manifested on a platform that we are no longer even 
 going to use since it's incapable of running the final stylus functional test.
